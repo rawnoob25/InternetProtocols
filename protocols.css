@@ -1,0 +1,27 @@
+.clarify {
+	color: #cc0c25;
+	font-size: 1.5em;
+}
+
+h2 {
+	color: #FFFFFF;
+	background-color: #cc0c25;
+	padding-left: 20px;
+}
+
+li {
+	margin-bottom: 10px;
+}
+
+.protocol {
+	border-bottom: solid black;
+}
+
+.protocol_content {
+	width: 80vw; /*1vw is 1/100th of the width of the viewport*/
+}
+
+h1 {
+	text-align: center;
+}
+

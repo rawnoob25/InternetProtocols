@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>protocols</title>
+    <link rel = 'stylesheet' type = 'text/css' href = 'protocols.css'>
+  </head>
+  <body>
+  	<h1>Internet Protocols</h1>
+  	<div class = 'protocol'>
+  		<h2>DHCP</h2>
+  		<div class = 'protocol_content'>
+			<h3>Purpose</h3>
+			<p>To give a host on a network an IPv4 address</p>
+			<h3>Procedure</h3>
+			<ol>
+				<li><span style = 'font-weight: bold;'>DHCP DISCOVER:</span> Host sends a limited broadcast to either IPV4 address 255.255.255.255 or to MAC address FF-FF-FF-FF-FF-FF.</li>
+				<li><span style = 'font-weight: bold;'>DHCP OFFER:</span> DHCP server on network (if present) responds to the broadcast and other hosts on network ignore the broadcast. The response includes a suggested IP address for the soon-to-be DHCP client. This response is the DHCP offer.</li>
+				<li><span style = 'font-weight: bold'>DHCP REQUEST:</span> DHCP client sends message to DHCP server accepting the IP address provided to it.</li>
+				<li><span style = 'font-weight:bold'>DHCP ACK:</span> DHCP server acknowledges receipt of the DHCP client's DHCP request.</li>
+			</ol>
+
+			<h3>Other Considerations</h3>
+			<p>
+			In large corporate networks there's usually PC that functions as a DHCP server. In smaller corporate networks and in home networks, a router usually functions as a DHCP server for hosts on the network, and it's in turn a DHCP client for an ISP's DHCP server.
+			</p>
+			<div class = 'clarify'>Are DHCP requests from hosts on a home network sent to the router and then forwarded to the ISP's DHCP server? Is it the ISP's DHCP server that ultimately sends the host the DHCP ACK?</div>
+
+			<p>In situations where a host on a network doesn't have an IP address, it assigns itself an IP address whose first couple octets are <span style = 'font-weight: bold; font-style: italic;'>169.254</span>; This is called an <span style = 'font-weight: bold;'>Automatic Private IP Address (APIPA)</span>; the host may lack an ip address due to any of the following: 
+				<ul>
+					<li>It's been set up for manual IP configuration and was never given an IP address. </li>
+					<li>It has no associated DHCP server.</li>
+					<li>It has not sent a valid DHCP request to its DHCP server.</li>
+				</ul>
+			</p>
+		</div>	
+	</div>
+	<div class = 'protocol'>
+		<h2>ARP</h2>
+	</div>
+  </body>
+</html>
