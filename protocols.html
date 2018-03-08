@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang = 'en'>
   <head>
     <meta charset="UTF-8">
     <title>protocols</title>
@@ -37,6 +37,18 @@
 	</div>
 	<div class = 'protocol'>
 		<h2>ARP</h2>
+		<div class = 'protocol_content'>
+			<h3>Purpose</h3>
+			<p>When a device on the network wants to know another device's MAC address but does not, yet it knows the other device's IPv4 address, ARP allows the requesting device to obtain the MAC address of the other device. This is useful when a device needs to send a packet to another device on the local network (or needs to send the packet to the default gateway for transfer to another network), as the OSI layer 2 ethernet protocol cannot be completed without a valid destination MAC address.</p>
+			<h3>Procedure</h3>
+			<ol>
+				<li><span style = 'font-weight: bold;'>ARP Request:</span> Host 1 (seeking the MAC address of Host 2) sends a limited broadcast to 255.255.255.255 (encapsulated in ethernet frame with destination MAC address FF-FF-FF-FF-FF-FF) asking device with ip address matching that stated in encapsulated data field of ethernet frame to send it (Host 1) its (the device w/ matching ip address) MAC address.</li>
+				<li><span style = 'font-weight: bold;'>ARP Reply:</span> Host 2 replies with its MAC address and all other hosts ignore the message.</li>
+				<li><span style = 'font-weight: bold;'>ARP cache update:</span> Host 1 updates its ARP table (ARP table is a mapping on any device of IPV4 addresses to MAC addresses for every device in that network)</li>	
+			</ol>
+			<h3>Other considerations</h3>
+			<div class = 'clarify'>What are the official names for the steps in this protocol?</div>
+		</div>
 	</div>
   </body>
 </html>
